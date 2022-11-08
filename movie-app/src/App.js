@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { MovieCard } from './components/MovieCard';
 
 
 function App() {
@@ -22,11 +23,15 @@ function App() {
 
 
     console.log(movieList);
-
+    if (!movieList) {
+      return <>loading...</>;
+  }
   return (
-    <div>
-      <p>Hello, the first movie found is {movieList}</p>
-    </div>
+    <>
+      {movieList.map((movie, index)=>{
+        return <MovieCard key={index} movie={movie}/>
+      })}
+      </>
   );
 }
 
