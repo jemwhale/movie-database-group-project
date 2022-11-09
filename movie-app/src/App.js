@@ -8,7 +8,7 @@ function App() {
 
   
   useEffect(() => { 
-      fetch(`https://i-m-d-b.herokuapp.com?q=marvel&s=2`)
+      fetch(`https://i-m-d-b.herokuapp.com?q=marvel`)
       .then((res) => res.json())
       .then((data) => {
         setMovieList(data);
@@ -16,20 +16,31 @@ function App() {
     }, []);
 
     if (!movieList) {
-      return <>loading...</>
+      return(
+        <div className="d-flex justify-content-around">
+          <MovieCard/>
+          <MovieCard/>
+          <MovieCard/>
+          <MovieCard/>
+          <MovieCard/>
+          <MovieCard/>
+          <MovieCard/>
+          <MovieCard/>
+        </div>
+      )
   }
 
 
 
   return(
-    <>
+    <div className="d-flex justify-content-around">
     {console.log(movieList)}
     {console.log(Object.keys(movieList).length)}
     {Object.keys(movieList).map((movie, index)=>{
       if(index >0 && index <=Object.keys(movieList).length-4){
         return <MovieCard key={index} movie={movieList[index]}/>
       }})}
-    </>
+    </div>
   )
 };
 
