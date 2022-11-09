@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 
-function MovieCard(){
+function MovieCard(props){
     return(
-        <>
-        Movie Card
-        </>
+        <p>
+        {props.movie.title}
+        </p>
     )
 }
 

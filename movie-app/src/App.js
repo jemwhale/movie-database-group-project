@@ -6,33 +6,31 @@ function App() {
 
   const [movieList, setMovieList] = useState();
 
-  async function getMovies(){
-    try{
-      const res = await fetch('https://i-m-d-b.herokuapp.com?q=toy%20story&l=5');
-      const data = await res.json();
-      setMovieList(data);
-    }catch{
-      console.log('Error fetching movies');
-    }
-  };
-    
   
-  useEffect(() => {
-      getMovies();
+  useEffect(() => { 
+      fetch(`https://i-m-d-b.herokuapp.com?q=marvel&s=2`)
+      .then((res) => res.json())
+      .then((data) => {
+        setMovieList(data);
+      });
     }, []);
 
-
-    console.log(movieList);
     if (!movieList) {
-      return <>loading...</>;
+      return <>loading...</>
   }
-  return (
+
+
+
+  return(
     <>
-      {movieList.map((movie, index)=>{
-        return <MovieCard key={index} movie={movie}/>
-      })}
-      </>
-  );
-}
+    {console.log(movieList)}
+    {console.log(Object.keys(movieList).length)}
+    {Object.keys(movieList).map((movie, index)=>{
+      if(index >0 && index <=Object.keys(movieList).length-4){
+        return <MovieCard key={index} movie={movieList[index]}/>
+      }})}
+    </>
+  )
+};
 
 export default App;
