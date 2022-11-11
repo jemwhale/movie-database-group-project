@@ -11,7 +11,8 @@ function MovieCard(props){
     if (!props.movie) {
         return(
             
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '500px' }}>
+        
         <Card.Img variant="top" src="holder.js/100px180" />
         <Card.Body>
           <Placeholder as={Card.Title} animation="glow">
@@ -30,11 +31,18 @@ function MovieCard(props){
    
     return(
         
-        <Card style={{ width: '20rem' }}>
-          <Card.Img variant="top" src={props.movie.poster} />
+        <Card >
+          <div style={{height: '400px', width: "200px"}}>
+          <Card.Img 
+          
+            bg='dark'
+            variant='top' 
+            src={props.movie.poster} />
+          </div>
+
           <Card.Body>
-            <Card.Title>{props.movie.title}</Card.Title>
-            <Card.Text>
+            <Card.Title className="text-truncate">{props.movie.title}</Card.Title>
+            <Card.Text className="text-truncate">
                 {props.movie.short_imdb_description}
             </Card.Text>
             <Button variant="primary">Go somewhere</Button>
