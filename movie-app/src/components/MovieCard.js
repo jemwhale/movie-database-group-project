@@ -31,10 +31,9 @@ function MovieCard(props){
    
     return(
         
-        <Card >
-          <div style={{height: '400px', width: "200px"}}>
+        <Card style={{width: "300px"}}>
+          <div style={{height: '400px', width: "200px", }}>
           <Card.Img 
-          
             bg='dark'
             variant='top' 
             src={props.movie.poster} />

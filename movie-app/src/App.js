@@ -44,7 +44,17 @@ function App() {
 
   return(
 
-    <Container fluid>
+
+      // <div className="d-flex">
+      //   {Object.keys(movieList).map((movie, index)=>{
+      //       if(index >0 && index <=Object.keys(movieList).length-4){
+      //         return <MovieCard key={index} movie={movieList[index]}/>
+      //       }})}
+      // </div>
+
+
+
+    <Container>
           <Row xs={1} sm={2} md={3} lg={4} className="g-4">
           {Object.keys(movieList).map((movie, index)=>{
             if(index >0 && index <=Object.keys(movieList).length-4){
