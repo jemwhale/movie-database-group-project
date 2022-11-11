@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { MovieCard } from './components/MovieCard';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 
 
 function App() {
@@ -17,7 +20,11 @@ function App() {
 
     if (!movieList) {
       return(
-        <div className="d-flex justify-content-around">
+
+        <Container fluid>
+          <Row xs={1} sm={2} md={3} lg={4} className="g-4">
+
+
           <MovieCard/>
           <MovieCard/>
           <MovieCard/>
@@ -26,21 +33,28 @@ function App() {
           <MovieCard/>
           <MovieCard/>
           <MovieCard/>
-        </div>
+
+
+          </Row>
+        </Container>
       )
   }
 
 
 
   return(
-    <div className="d-flex justify-content-around">
-    {console.log(movieList)}
-    {console.log(Object.keys(movieList).length)}
-    {Object.keys(movieList).map((movie, index)=>{
-      if(index >0 && index <=Object.keys(movieList).length-4){
-        return <MovieCard key={index} movie={movieList[index]}/>
-      }})}
-    </div>
+
+    <Container fluid>
+          <Row xs={1} sm={2} md={3} lg={4} className="g-4">
+          {Object.keys(movieList).map((movie, index)=>{
+            if(index >0 && index <=Object.keys(movieList).length-4){
+              return <Col>
+               <MovieCard key={index} movie={movieList[index]}/>
+               </Col>
+            }})}
+            </Row>
+        </Container>
+
   )
 };
 
