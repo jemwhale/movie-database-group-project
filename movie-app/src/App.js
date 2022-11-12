@@ -55,7 +55,7 @@ function App() {
 
 
     <Container>
-          <Row xs={1} sm={2} md={3} lg={4} className="g-4">
+          <Row xs={1}  md={2} lg={3} xxl={4} className="g-4">
           {Object.keys(movieList).map((movie, index)=>{
             if(index >0 && index <=Object.keys(movieList).length-4){
               return <Col>

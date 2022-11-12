@@ -31,13 +31,15 @@ function MovieCard(props){
    
     return(
         
-        <Card style={{width: "300px"}}>
-          <div style={{height: '400px', width: "200px", }}>
+        <Card >
+          {/* <div style={{height: '400px', width: "200px", }}> */}
           <Card.Img 
+          style={{objectFit: 'cover', objectPosition: '50% 0%'}}
+          height="450px"
             bg='dark'
             variant='top' 
             src={props.movie.poster} />
-          </div>
+          {/* </div> */}
 
           <Card.Body>
             <Card.Title className="text-truncate">{props.movie.title}</Card.Title>
