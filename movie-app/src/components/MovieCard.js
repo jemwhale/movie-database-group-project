@@ -28,13 +28,16 @@ function MovieCard(props){
   }
    
   return(
-      <Card >
+      <Card className="my-card">
+        <div className="my-card-image-container">
         <Card.Img 
+          className="my-card-image"
           style={{objectFit: 'cover', objectPosition: '50% 0%'}}
-          height="350px"
+          height="450px"
           bg='dark'
           variant='top' 
           src={props.movie.poster}/>
+          </div>
         <Card.Body>
           <Card.Title className="text-truncate">{props.movie.title}</Card.Title>
           <Card.Text className="text-truncate">

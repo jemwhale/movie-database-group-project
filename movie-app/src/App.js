@@ -19,7 +19,7 @@ function App() {
     if (!movieList) {
       return(
         <Container>
-          <Row xs={1}  md={2} lg={3} xxl={4} className="g-4">
+          <Row xs={1}  md={2} lg={3} xl={4} xxl={4} className="g-4">
           <Col><MovieCard/></Col>
           <Col><MovieCard/></Col>
           <Col><MovieCard/></Col>

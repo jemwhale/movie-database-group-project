@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.my-card{overflow: hidden;
+}
+
+.my-card-image-container{
+  overflow: hidden;
+}
+
+.my-card:hover{
+  transition: all .2s ease-in-out; 
+  transform: scale(1.01);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  overflow: hidden;
+}
+
+.my-card:hover .my-card-image{
+  transition: all .3s ease-in-out; 
+  transform: scale(1.02);
+}
+
+
