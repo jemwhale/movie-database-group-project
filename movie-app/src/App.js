@@ -38,8 +38,10 @@ function App() {
   }
 
   // MOVIES
+
   return(
     <Container>
+      {console.log(movieList)}
           <Row xs={1}  md={2} lg={3} xxl={4} className="g-4">
             {Object.keys(movieList).map((movie, index)=>{
               if(index >0 && index <=Object.keys(movieList).length-4){
@@ -52,8 +54,10 @@ function App() {
   )
 
     // RICK AND MORTY
+
     // return(
     //   <Container>
+    //     {console.log(movieList)}
     //         <Row xs={1}  md={2} lg={3} xxl={4} className="g-4">
     //           {movieList.map((character, index)=>{
     //             if(index >0 && index <=Object.keys(movieList).length-4){
