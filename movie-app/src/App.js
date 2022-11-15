@@ -9,7 +9,7 @@ import { Navigation } from './components/Navigation';
 
 function App() {
 
-  const [movieList, setMovieList] = useState();
+  const [movieList, setMovieList] = useState([]);
 
   // MOVIES 
 
@@ -35,12 +35,12 @@ function App() {
 
       let mergedResults = []
 
-      for(let i = 0; i <= 5; i ++){
+      for(let i = 1; i <= 6; i ++){
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=58b2bb2d117bc09545331acc1269e792&page=${i}`) // GET POPULAR
         // fetch(`https://api.themoviedb.org/3//search/movie?api_key=58b2bb2d117bc09545331acc1269e792&query=comedy&page=${i}`) // SEARCH
         .then((res) => res.json())
         .then((data) => {
-        console.log(data);
+        // console.log(data);
         mergedResults = [...mergedResults, ...data.results];
         setMovieList(mergedResults);
         }) 
