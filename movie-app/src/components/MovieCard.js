@@ -27,7 +27,10 @@ function MovieCard(props){
     )
   }
    
-  let poster = 'https://image.tmdb.org/t/p/w400' + props.movie.poster_path
+  let poster = ''
+  if(!props.movie.poster_path){poster = 'https://www.charitycomms.org.uk/wp-content/uploads/2019/02/placeholder-image-square.jpg'}
+  else{poster = 'https://image.tmdb.org/t/p/w400' + props.movie.poster_path}
+  
 
   return(
       <Card className="my-card">

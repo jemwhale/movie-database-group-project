@@ -36,7 +36,8 @@ function App() {
       let mergedResults = []
 
       for(let i = 0; i <= 5; i ++){
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=58b2bb2d117bc09545331acc1269e792&page=${i}`) // MOVIES 2
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=58b2bb2d117bc09545331acc1269e792&page=${i}`) // GET POPULAR
+        // fetch(`https://api.themoviedb.org/3//search/movie?api_key=58b2bb2d117bc09545331acc1269e792&query=comedy&page=${i}`) // SEARCH
         .then((res) => res.json())
         .then((data) => {
         console.log(data);
