@@ -27,6 +27,8 @@ function MovieCard(props){
     )
   }
    
+  let poster = 'https://image.tmdb.org/t/p/w400' + props.movie.poster_path
+
   return(
       <Card className="my-card">
         <div className="my-card-image-container">
@@ -36,12 +38,12 @@ function MovieCard(props){
           height="450px"
           bg='dark'
           variant='top' 
-          src={props.movie.poster}/>
+          src={poster}/>
           </div>
         <Card.Body>
           <Card.Title className="text-truncate">{props.movie.title}</Card.Title>
           <Card.Text className="text-truncate">
-              {props.movie.short_imdb_description}
+              {props.movie.overview}
           </Card.Text>
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>

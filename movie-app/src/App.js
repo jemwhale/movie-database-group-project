@@ -13,20 +13,37 @@ function App() {
 
   // MOVIES 
 
-  useEffect(() => { 
-      fetch(`https://i-m-d-b.herokuapp.com?q=the`) // MOVIES 
-      // fetch(`https://rickandmortyapi.com/api/character`) // RICK AND MORTY
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data)
-        const movieArray = Object.values(data)
-        const filteredArray = movieArray.filter((movie, index)=>{
-            if(movie.title){
-            return movie;
-          }
-        })
-        setMovieList(filteredArray);
-      });
+  // useEffect(() => { 
+  //     fetch(`https://i-m-d-b.herokuapp.com?q=the`) // MOVIES 
+  //     // fetch(`https://rickandmortyapi.com/api/character`) // RICK AND MORTY
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       const movieArray = Object.values(data)
+  //       const filteredArray = movieArray.filter((movie, index)=>{
+  //           if(movie.title){
+  //           return movie;
+  //         }
+  //       })
+  //       setMovieList(filteredArray);
+  //       console.log(filteredArray);
+  //     });
+  //   }, []);
+
+    // MOVIES 2
+
+    useEffect(() => { 
+
+      let mergedResults = []
+
+      for(let i = 0; i <= 5; i ++){
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=58b2bb2d117bc09545331acc1269e792&page=${i}`) // MOVIES 2
+        .then((res) => res.json())
+        .then((data) => {
+        console.log(data);
+        mergedResults = [...mergedResults, ...data.results];
+        setMovieList(mergedResults);
+        }) 
+      };
     }, []);
 
     return(
