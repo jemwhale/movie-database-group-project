@@ -20,6 +20,8 @@ function Home(props){
         );
       }, [search, props.movieList]);
 
+      console.log(props.movieList);
+
     if (!props.movieList) {
         return(
           <Container>

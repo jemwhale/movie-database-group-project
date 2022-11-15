@@ -45,9 +45,9 @@ function MovieCard(props){
           </div>
         <Card.Body>
           <Card.Title className="text-truncate">{props.movie.title}</Card.Title>
-          <Card.Text className="text-truncate">
-              {props.movie.overview}
-          </Card.Text>
+            <Card.Text className="text-truncate">
+                {props.movie.overview}
+            </Card.Text>
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>
       </Card>
