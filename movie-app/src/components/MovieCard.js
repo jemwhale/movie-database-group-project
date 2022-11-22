@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Placeholder from 'react-bootstrap/Placeholder';
+import {Link} from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 function MovieCard(props){
 
@@ -48,7 +49,12 @@ function MovieCard(props){
             <Card.Text className="text-truncate">
                 {props.movie.overview}
             </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+            
+            <Link to={`/${props.movie.id}`}>
+              <Button variant="primary">
+              More details
+              </Button>
+            </Link>
         </Card.Body>
       </Card>
   )

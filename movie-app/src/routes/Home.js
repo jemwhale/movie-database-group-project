@@ -25,7 +25,6 @@ function Home(props){
     if (!props.movieList) {
         return(
           <Container>
-            <Navigation/>
             <Row className='mb-4'>
                 <Col sm='8' md='6' className='mx-auto'>
                     <InputGroup>
@@ -55,7 +54,6 @@ function Home(props){
 
     return(
         <Container>
-            <Navigation/>
             <Row className='mb-4'>
                 <Col sm='8' md='6' className='mx-auto'>
                     <InputGroup>
