@@ -3,7 +3,8 @@ import Container from 'react-bootstrap/Container';
 import { Navigation } from './components/Navigation';
 import { Home } from './routes/Home'
 import { MovieDetails } from './routes/MovieDetails';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
 
 function App() {
 
@@ -29,8 +30,9 @@ function App() {
       <Container>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Home movieList={movieList}/>}/>
-            <Route path='/:id' element={<MovieDetails movieList={movieList}/>}/>
+            <Route path='/' element={ <Navigate to="/movies/popular" /> }/>
+            <Route path='/movies/popular' element={<Home movieList={movieList}/>}/>
+            <Route path='/movie/:id' element={<MovieDetails movieList={movieList}/>}/>
           </Routes>
         </BrowserRouter>
       </Container>

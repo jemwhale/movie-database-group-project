@@ -50,7 +50,7 @@ function MovieCard(props){
                 {props.movie.overview}
             </Card.Text>
             
-            <Link to={`/${props.movie.id}`}>
+            <Link to={`/movie/${props.movie.id}`}>
               <Button variant="primary">
               More details
               </Button>
