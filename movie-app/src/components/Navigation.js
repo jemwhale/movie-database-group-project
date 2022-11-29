@@ -12,7 +12,7 @@ function Navigation() {
           Movies
         </Navbar.Brand>
         <Nav className='me-auto'>
-          <Nav.Link href='/'>All Movies</Nav.Link>
+          <Nav.Link href='/'>Popular</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
