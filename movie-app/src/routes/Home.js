@@ -21,8 +21,6 @@ function Home(){
         );
       }, [search, movieList]);
 
-      console.log(movieList);
-
     if (!movieList) {
         return(
           <Container>
