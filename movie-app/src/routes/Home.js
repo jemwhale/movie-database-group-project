@@ -1,28 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { MovieCard } from '../components/MovieCard';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/esm/Container';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
-import { Navigation } from '../components/Navigation';
+import { MoviesContext } from '../App';
 
-function Home(props){
+function Home(){
 
     const [filteredMovieList, setFilteredMovieList] = useState([]);
     const [search, setSearch] = useState('');
+    const {movieList, setMovieList} = useContext(MoviesContext);
 
     useEffect(() => {
         setFilteredMovieList(
-          props.movieList.filter((movie) =>
+          movieList.filter((movie) =>
             movie.title.toLowerCase().includes(search.toLowerCase())
           )
         );
-      }, [search, props.movieList]);
+      }, [search, movieList]);
 
-      console.log(props.movieList);
-
-    if (!props.movieList) {
+    if (!movieList) {
         return(
           <Container>
             <Row className='mb-4'>

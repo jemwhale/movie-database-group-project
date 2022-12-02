@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, createContext} from 'react';
 import Container from 'react-bootstrap/Container';
 import { Navigation } from './components/Navigation';
 import { Home } from './routes/Home'
 import { MovieDetails } from './routes/MovieDetails';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
+export const MoviesContext = createContext();
 
 function App() {
 
@@ -26,16 +27,18 @@ function App() {
 
     return(
       <>
-      <Navigation/>
-      <Container>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={ <Navigate to="/movies/popular" /> }/>
-            <Route path='/movies/popular' element={<Home movieList={movieList}/>}/>
-            <Route path='/movie/:id' element={<MovieDetails movieList={movieList}/>}/>
-          </Routes>
-        </BrowserRouter>
-      </Container>
+      <MoviesContext.Provider value = {{movieList, setMovieList}}>
+        <Navigation/>
+        <Container>
+          <BrowserRouter>
+            <Routes>
+              <Route path='/' element={ <Navigate to="/movies/popular" /> }/>
+              <Route path='/movies/popular' element={<Home movieList={movieList}/>}/>
+              <Route path='/movie/:id' element={<MovieDetails movieList={movieList}/>}/>
+            </Routes>
+          </BrowserRouter>
+        </Container>
+        </MoviesContext.Provider>
       </>
       
     )
