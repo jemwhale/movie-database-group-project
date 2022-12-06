@@ -16,14 +16,14 @@ function App() {
       let mergedResults = []
 
       for(let i = 1; i <= 6; i ++){
-        setTimeout(() => {
+        // setTimeout(() => {
           fetch(`https://api.themoviedb.org/3/movie/popular?api_key=58b2bb2d117bc09545331acc1269e792&page=${i}`) // GET POPULAR
           .then((res) => res.json())
           .then((data) => {
           mergedResults = [...mergedResults, ...data.results];
           setMovieList(mergedResults);
           }) 
-        }, 2000);
+        // }, 3000);
       };
     }, []);
 
