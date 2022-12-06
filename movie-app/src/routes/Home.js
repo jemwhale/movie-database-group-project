@@ -19,9 +19,9 @@ function Home(){
             movie.title.toLowerCase().includes(search.toLowerCase())
           )
         );
-      }, [search, movieList]);
+      }, [search, filteredMovieList]);
 
-    if (!movieList) {
+    if (!filteredMovieList) {
         return(
           <Container>
             <Row className='mb-4'>

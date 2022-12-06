@@ -33,8 +33,8 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path='/' element={ <Navigate to="/movies/popular" /> }/>
-              <Route path='/movies/popular' element={<Home movieList={movieList}/>}/>
-              <Route path='/movie/:id' element={<MovieDetails movieList={movieList}/>}/>
+              <Route path='/movies/popular' element={<Home/>}/>
+              <Route path='/movie/:id' element={<MovieDetails/>}/>
             </Routes>
           </BrowserRouter>
         </Container>
