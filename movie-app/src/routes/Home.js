@@ -21,7 +21,7 @@ function Home(){
         );
       }, [search, filteredMovieList]);
 
-    if (!filteredMovieList) {
+    if (!movieList[0]) {
         return(
           <Container>
             <Row className='mb-4'>
